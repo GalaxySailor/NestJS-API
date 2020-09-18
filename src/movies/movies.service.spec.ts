@@ -87,7 +87,7 @@ describe('MoviesService', () => {
       try {
         service.create({
           title: 'matrix',
-          hacker: 2000,
+          year: 2000,
           genres: ['hm'],
         });
       } catch (e) {

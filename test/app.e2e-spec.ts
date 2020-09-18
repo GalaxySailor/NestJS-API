@@ -15,6 +15,8 @@ describe('AppController (e2e)', () => {
     app = moduleFixture.createNestApplication();
     app.useGlobalPipes(
       new ValidationPipe({
+        whitelist: true,
+        forbidNonWhitelisted: true,
         transform: true,
       }),
     );
@@ -62,7 +64,7 @@ describe('AppController (e2e)', () => {
     it('PATCH 200', () => {
       return request(app.getHttpServer())
         .patch('/movies/1')
-        .send({ title: 'sexyback' })
+        .send({ year: 1004 })
         .expect(200);
     });
     it('DELETE 200', () => {

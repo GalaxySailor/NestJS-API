@@ -33,7 +33,7 @@ export class MoviesService {
     );
   }
 
-  update(id: number, updateData: UpdateMovieDto): void {
+  update(id: number, updateData: UpdateMovieDto) {
     const movie = this.getOne(id);
     Object.assign(movie, updateData);
   }
